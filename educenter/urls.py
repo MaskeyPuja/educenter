@@ -28,6 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('course', CourseView.as_view(), name = 'course'),
     path('event', EventView.as_view(), name = 'event'),
-    path('blog', BlogView.as_view(), name = 'blog'),
+    # path('blog', BlogView.as_view(), name = 'blog'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
