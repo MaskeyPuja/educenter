@@ -52,3 +52,7 @@ class ResearchView(TemplateView):
 
 class ScholarshipView(TemplateView):
 	template_name = 'eduapp/scholarship.html'
+
+
+class TeacherView(TemplateView):
+	template_name = 'eduapp/teacher.html'
