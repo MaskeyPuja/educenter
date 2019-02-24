@@ -56,3 +56,7 @@ class ScholarshipView(TemplateView):
 
 class TeacherView(TemplateView):
 	template_name = 'eduapp/teacher.html'
+
+
+class CourseDetailView(TemplateView):
+	template_name = 'eduapp/course_detail.html'
