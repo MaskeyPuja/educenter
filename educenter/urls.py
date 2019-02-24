@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from eduapp.views import HomeView, CourseView, EventView, BlogView, ContactView, NoticeView, ResearchView, ScholarshipView, TeacherView, CourseDetailView
+from eduapp.views import HomeView, AboutView, CourseView, EventView, BlogView, ContactView, NoticeView, ResearchView, ScholarshipView, TeacherView, CourseDetailView
 
 from django.conf import settings
 from django.views.static import serve
@@ -26,6 +26,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', HomeView.as_view(), name = 'home'),
     path('admin/', admin.site.urls),
+    path('about', AboutView.as_view(), name = 'about'),
     path('course', CourseView.as_view(), name = 'course'),
     path('event', EventView.as_view(), name = 'event'),
     # path('blog', BlogView.as_view(), name = 'blog'),

@@ -9,6 +9,14 @@ class HomeView(TemplateView):
 
 		return context
 
+class AboutView(TemplateView):
+	template_name = 'eduapp/about.html'
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context['active'] = 'about'
+
+		return context
 
 class CourseView(TemplateView):
 	template_name = 'eduapp/courses.html'
