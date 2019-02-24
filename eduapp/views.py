@@ -31,3 +31,12 @@ class EventView(TemplateView):
 
 class BlogView(TemplateView):
 	template_name = 'eduapp/blog.html'
+
+class ContactView(TemplateView):
+	template_name = 'eduapp/contact.html'
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context['active'] = 'contact'
+
+		return context
