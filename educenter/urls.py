@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from eduapp.views import HomeView, CourseView, EventView, BlogView, ContactView, NoticeView
+from eduapp.views import HomeView, CourseView, EventView, BlogView, ContactView, NoticeView, ResearchView
 
 from django.conf import settings
 from django.views.static import serve
@@ -31,5 +31,6 @@ urlpatterns = [
     # path('blog', BlogView.as_view(), name = 'blog'),
     path('contact', ContactView.as_view(), name = 'contact'),
     path('notice', NoticeView.as_view(), name = 'notice'),
+    path('research', ResearchView.as_view(), name = 'research'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

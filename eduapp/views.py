@@ -44,3 +44,9 @@ class ContactView(TemplateView):
 
 class NoticeView(TemplateView):
 	template_name = 'eduapp/notice.html'
+
+
+
+class ResearchView(TemplateView):
+	template_name = 'eduapp/research.html'
+
