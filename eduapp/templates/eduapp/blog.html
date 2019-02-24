@@ -1,39 +1,41 @@
-{% load static %}
+{% extends 'eduapp/base.html' %}
+
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
   <meta charset="utf-8">
-  <title> {% block title %}Educenter {% endblock %}</title>
+  <title>Educenter</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+  
   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
   <!-- slick slider -->
-  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <link rel="stylesheet" href="plugins/slick/slick.css">
   <!-- themefy-icon -->
-  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
   <!-- animation css -->
-  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+  <link rel="stylesheet" href="plugins/animate/animate.css">
   <!-- aos -->
-  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+  <link rel="stylesheet" href="plugins/aos/aos.css">
   <!-- venobox popup -->
-  <link rel="stylesheet" href="{% static 'plugins/venobox/venobox.css' %}">
+  <link rel="stylesheet" href="plugins/venobox/venobox.css">
 
   <!-- Main Stylesheet -->
-  <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
+  <link href="css/style.css" rel="stylesheet">
+  
   <!--Favicon-->
-  <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-  <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
 </head>
-<body>
 
+<body>
+  
 
 <!-- header -->
 <header class="fixed-top header">
@@ -66,7 +68,7 @@
   <div class="navigation w-100">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light p-0">
-        <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
         <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
           aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -74,19 +76,19 @@
 
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="navbar-nav ml-auto text-center">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            <li class="nav-item @@home">
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item @@about">
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item @@courses">
-              <a class="nav-link" href="{% url 'course' %}">COURSES</a>
+              <a class="nav-link" href="courses.html">COURSES</a>
             </li>
             <li class="nav-item @@events">
-              <a class="nav-link" href="{% url 'event' %}">EVENTS</a>
+              <a class="nav-link" href="events.html">EVENTS</a>
             </li>
-            <li class="nav-item @@blog">
+            <li class="nav-item active">
               <a class="nav-link" href="blog.html">BLOG</a>
             </li>
             <li class="nav-item dropdown view">
@@ -115,8 +117,8 @@
     </div>
   </div>
 </header>
-<!--/header-->
-
+<!-- /header -->
+<!-- Modal -->
 <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content rounded-0 border-0 p-4">
@@ -180,8 +182,151 @@
     </div>
 </div>
 
-{% block body %}
-{% endblock %}
+<!-- page title -->
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Our Blog</a></li>
+          <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+        </ul>
+        <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<!-- blogs -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <!-- blog post -->
+      <article class="col-lg-4 col-sm-6 mb-5">
+        <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/blog/post-1.jpg" alt="Post thumb">
+          <div class="card-body">
+            <!-- post meta -->
+            <ul class="list-inline mb-3">
+              <!-- post date -->
+              <li class="list-inline-item mr-3 ml-0">August 28, 2018</li>
+              <!-- author -->
+              <li class="list-inline-item mr-3 ml-0">By Somrat Sorkar</li>
+            </ul>
+            <a href="blog-single.html">
+              <h4 class="card-title">Elegant Light Box Paper Cut Dioramas</h4>
+            </a>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+            <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+          </div>
+        </div>
+      </article>
+      <!-- blog post -->
+      <article class="col-lg-4 col-sm-6 mb-5">
+        <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/blog/post-2.jpg" alt="Post thumb">
+          <div class="card-body">
+            <!-- post meta -->
+            <ul class="list-inline mb-3">
+              <!-- post date -->
+              <li class="list-inline-item mr-3 ml-0">August 13, 2018</li>
+              <!-- author -->
+              <li class="list-inline-item mr-3 ml-0">By Jonathon Drew</li>
+            </ul>
+            <a href="blog-single.html">
+              <h4 class="card-title">The Expenses You Are Thinking</h4>
+            </a>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+            <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+          </div>
+        </div>
+      </article>
+      <!-- blog post -->
+      <article class="col-lg-4 col-sm-6 mb-5">
+        <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/blog/post-3.jpg" alt="Post thumb">
+          <div class="card-body">
+            <!-- post meta -->
+            <ul class="list-inline mb-3">
+              <!-- post date -->
+              <li class="list-inline-item mr-3 ml-0">August 24, 2018</li>
+              <!-- author -->
+              <li class="list-inline-item mr-3 ml-0">By Alex Pitt</li>
+            </ul>
+            <a href="blog-single.html">
+              <h4 class="card-title">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+            </a>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+            <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+          </div>
+        </div>
+      </article>
+      <!-- blog post -->
+      <article class="col-lg-4 col-sm-6 mb-5">
+        <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/blog/post-1.jpg" alt="Post thumb">
+          <div class="card-body">
+            <!-- post meta -->
+            <ul class="list-inline mb-3">
+              <!-- post date -->
+              <li class="list-inline-item mr-3 ml-0">August 28, 2018</li>
+              <!-- author -->
+              <li class="list-inline-item mr-3 ml-0">By Somrat Sorkar</li>
+            </ul>
+            <a href="blog-single.html">
+              <h4 class="card-title">Enrolling new members into the Libraray</h4>
+            </a>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+            <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+          </div>
+        </div>
+      </article>
+      <!-- blog post -->
+      <article class="col-lg-4 col-sm-6 mb-5">
+        <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/blog/post-2.jpg" alt="Post thumb">
+          <div class="card-body">
+            <!-- post meta -->
+            <ul class="list-inline mb-3">
+              <!-- post date -->
+              <li class="list-inline-item mr-3 ml-0">August 13, 2018</li>
+              <!-- author -->
+              <li class="list-inline-item mr-3 ml-0">By Jonathon Drew</li>
+            </ul>
+            <a href="blog-single.html">
+              <h4 class="card-title">Completion of Projects before the deadline</h4>
+            </a>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+            <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+          </div>
+        </div>
+      </article>
+      <!-- blog post -->
+      <article class="col-lg-4 col-sm-6 mb-5">
+        <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/blog/post-3.jpg" alt="Post thumb">
+          <div class="card-body">
+            <!-- post meta -->
+            <ul class="list-inline mb-3">
+              <!-- post date -->
+              <li class="list-inline-item mr-3 ml-0">August 24, 2018</li>
+              <!-- author -->
+              <li class="list-inline-item mr-3 ml-0">By Alex Pitt</li>
+            </ul>
+            <a href="blog-single.html">
+              <h4 class="card-title">The changing scenario in music industry</h4>
+            </a>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+            <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- /blogs -->
+
 <!-- footer -->
 <footer>
   <!-- newsletter -->
@@ -206,7 +351,7 @@
       <div class="row">
         <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
           <!-- logo -->
-          <a class="logo-footer" href="index.html"><img class="img-fluid mb-4" src="{% static 'images/logo.png' %}" alt="logo"></a>
+          <a class="logo-footer" href="index.html"><img class="img-fluid mb-4" src="images/logo.png" alt="logo"></a>
           <ul class="list-unstyled">
             <li class="mb-2">23621 15 Mile Rd #C104, Clinton MI, 48035, New York, USA</li>
             <li class="mb-2">+1 (2) 345 6789</li>
@@ -266,7 +411,7 @@
             <script>
               var CurrentYear = new Date().getFullYear()
               document.write(CurrentYear)
-            </script>
+            </script> 
             © Theme By <a href="https://themefisher.com">themefisher.com</a></p> . All Rights Reserved.
         </div>
         <div class="col-sm-5 text-sm-right text-center">
@@ -284,23 +429,23 @@
 <!-- /footer -->
 
 <!-- jQuery -->
-<script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+<script src="plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap JS -->
-<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
 <!-- slick slider -->
-<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+<script src="plugins/slick/slick.min.js"></script>
 <!-- aos -->
-<script src="{% static 'plugins/aos/aos.js' %}"></script>
+<script src="plugins/aos/aos.js"></script>
 <!-- venobox popup -->
-<script src="{% static 'plugins/venobox/venobox.min.js' %}"></script>
+<script src="plugins/venobox/venobox.min.js"></script>
 <!-- mixitup filter -->
-<script src="{% static 'plugins/mixitup/mixitup.min.js' %}"></script>
+<script src="plugins/mixitup/mixitup.min.js"></script>
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-<script src="{% static 'plugins/google-map/gmap.js' %}"></script>
+<script src="plugins/google-map/gmap.js"></script>
 
 <!-- Main Script -->
-<script src="{% static 'js/script.js' %}"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
