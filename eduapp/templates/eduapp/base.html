@@ -74,16 +74,16 @@
 
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="navbar-nav ml-auto text-center">
-            <li class="nav-item active">
+            <li class="nav-item {% if active == 'home' %} active {% endif %}">
               <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
-            <li class="nav-item @@about">
+            <li class="nav-item {% if active == 'abour' %} active {% endif %}">
               <a class="nav-link" href="about.html">About</a>
             </li>
-            <li class="nav-item @@courses">
+            <li class="nav-item {% if active == 'course' %} active {% endif %}">
               <a class="nav-link" href="{% url 'course' %}">COURSES</a>
             </li>
-            <li class="nav-item @@events">
+            <li class="nav-item {% if active == 'event' %} active {% endif %}">
               <a class="nav-link" href="{% url 'event' %}">EVENTS</a>
             </li>
 <!--             <li class="nav-item @@blog">
