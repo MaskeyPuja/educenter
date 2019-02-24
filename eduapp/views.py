@@ -40,3 +40,7 @@ class ContactView(TemplateView):
 		context['active'] = 'contact'
 
 		return context
+
+
+class NoticeView(TemplateView):
+	template_name = 'eduapp/notice.html'
