@@ -50,3 +50,5 @@ class NoticeView(TemplateView):
 class ResearchView(TemplateView):
 	template_name = 'eduapp/research.html'
 
+class ScholarshipView(TemplateView):
+	template_name = 'eduapp/scholarship.html'
