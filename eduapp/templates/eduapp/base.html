@@ -77,8 +77,8 @@
             <li class="nav-item {% if active == 'home' %} active {% endif %}">
               <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
-            <li class="nav-item {% if active == 'abour' %} active {% endif %}">
-              <a class="nav-link" href="about.html">About</a>
+            <li class="nav-item {% if active == 'about' %} active {% endif %}">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
             </li>
             <li class="nav-item {% if active == 'course' %} active {% endif %}">
               <a class="nav-link" href="{% url 'course' %}">COURSES</a>
@@ -97,13 +97,13 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'teacher' %}">Teacher</a>
                 <a class="dropdown-item" href="teacher-single.html">Teacher Single</a>
-                <a class="dropdown-item" href="notice.html">Notice</a>
+                <a class="dropdown-item" href="{% url 'notice' %}">Notice</a>
                 <a class="dropdown-item" href="notice-single.html">Notice Details</a>
                 <a class="dropdown-item" href="research.html">Research</a>
-                <a class="dropdown-item" href="scholarship.html">Scholarship</a>
-                <a class="dropdown-item" href="course-single.html">Course Details</a>
+                <a class="dropdown-item" href="{% url 'scholarship' %}">Scholarship</a>
+                <a class="dropdown-item" href="{% url 'course-detail' %}">Course Details</a>
                 <a class="dropdown-item" href="event-single.html">Event Details</a>
-                <a class="dropdown-item" href="blog-single.html">Blog Details</a>
+                <!-- <a class="dropdown-item" href="blog-single.html">Blog Details</a> -->
               </div>
             </li>
             <li class="nav-item {% if active == 'contact' %} active {% endif %}">

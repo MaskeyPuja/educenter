@@ -1,10 +1,10 @@
 {% extends 'eduapp/base.html' %}
-
+{% load static %}
 {% block title %}Notice{% endblock %}
 {% block body %}
 
 <!-- page title -->
-<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+<section class="page-title-section overlay" data-background="{% static 'images/backgrounds/page-title.jpg' %}">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
