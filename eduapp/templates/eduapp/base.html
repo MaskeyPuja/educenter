@@ -162,9 +162,9 @@
             </div>
             <div class="modal-body">
                 <form action="#" class="row">
-                    <div class="col-12">
+<!--                     <div class="col-12">
                         <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
-                    </div>
+                    </div> -->
                     <div class="col-12">
                         <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
                     </div>
@@ -172,7 +172,9 @@
                         <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
                     </div>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                      <form>
+                        <button formaction="{% url 'home' %}" type="submit" class="btn btn-primary">LOGIN</button>
+                      </form>
                     </div>
                 </form>
             </div>
